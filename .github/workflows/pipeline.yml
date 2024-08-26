@@ -24,6 +24,9 @@ jobs:
         run: npm run build
       - name: Run tests
         run: npm test
+      - name: ls
+        run: |
+          ls -la
       - uses: superfly/flyctl-actions/setup-flyctl@master # I'm assuming this also works if it's called `main`
         if: ${{ github.event_name == 'push' }}
       - run: flyctl deploy --remote-only
@@ -34,10 +37,16 @@ jobs:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
+      - name: ls
+        run: |
+          ls -la
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.merge_commit_sha }}
           fetch-depth: '0'
+      - name: ls
+        run: |
+          ls -la
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.70.0
         env:
