@@ -17,7 +17,7 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/dummy', (req, res) => {
-  res.send('Hi! Dummy feature')
+  res.send('New text')
 })
 
 app.listen(PORT, () => {
