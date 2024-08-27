@@ -1,4 +1,4 @@
-name: Hello World!
+name: Discord Webhook
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Deploy Success
-        uses: rjstone/discord-webhook-notify@v1
+        uses: rjstone/discord-webhook-notify@v1.0.0
         if: success()
         with:
           severity: info
