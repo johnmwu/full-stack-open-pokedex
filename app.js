@@ -17,7 +17,7 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/dummy', (req, res) => {
-  res.send('Yet another dummy endpoint')
+  res.send('Yet another dummy change')
 })
 
 app.listen(PORT, () => {
